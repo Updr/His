@@ -1,0 +1,30 @@
+# 端口配置
+server:
+    port: 8088
+
+# 数据源配置
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        type: com.alibaba.druid.pool.DruidDataSource
+        username: root
+        #password: fjw300216338
+        password: root
+        url: jdbc:mysql://localhost:3306/his?useSSL=false&serverTimezone=Asia/Shanghai
+        #url: jdbc:mysql://101.42.169.120:3310/his?useSSL=false&serverTimezone=Asia/Shanghai
+
+# mybatis-plus配置
+mybatis-plus:
+    global-config: 
+        # 控制台 不打印 mybatis-plus 的 LOGO
+        banner: false
+    configuration:
+        map-underscore-to-camel-case: true
+        # 如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+        call-setters-on-nulls: true
+        # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  level:
+    com.antrain.his.controller: DEBUG
